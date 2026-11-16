@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.22.1)
+project(stormnative LANGUAGES CXX)
+add_library(stormnative SHARED native.cpp)
+find_library(log-lib log)
+find_library(gles-lib GLESv3)
+target_link_libraries(stormnative ${gles-lib} ${log-lib})
